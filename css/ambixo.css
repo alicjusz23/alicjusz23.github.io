@@ -306,7 +306,7 @@ svg {
 /* Section */
 
 section .container {
-	padding: 125px 0;
+	padding: 85px 0;
 	position: relative;
 }
 
@@ -344,7 +344,7 @@ section#about-2 .container {
 
 .wrap-about {
 	display: block;
-	padding: 2em 2em 4em 2em;
+	padding: 2em;
 }
 
 .about .social-account {
