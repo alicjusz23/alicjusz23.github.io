@@ -308,11 +308,6 @@
         </div>
     </section>
 
-    <!-- Parallax Google Maps -->
-    <section id="parallax-9" class="container-fluid parallax fixed">
-      <div id="map-canvas" style="display: block;"></div>
-    </section>
-
     <!-- Contact -->
     <section id="contact" class="section-page">
       <div class="container">
@@ -348,10 +343,6 @@
       <div class="container">
          <div>
           <div class="col-xs-12" style="text-align: center;">
-              <ul class="col-xs-3">
-                  <li><i class="fa fa-map-marker"></i>  Bristol, UK
-                  </li>
-              </ul>
               <ul class="col-xs-3">
                   <li><i class="fa fa-envelope"></i>
                     <a href="mailto:alicja.lipka.bartosik@gmail.com">
@@ -401,56 +392,6 @@
         onStart: $.noop
       });
     </script>
-
-
-<!--Map -->
-  <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/build/ol.js"></script>
-  <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/css/ol.css" type="text/css">
-  <script type="text/javascript">
-
-    var center = ol.proj.fromLonLat([-2.588, 51.462]);
-
-    var markerStyle = new ol.style.Style({
-      image: new ol.style.Icon({
-        src: "img/icon.png"
-      })
-    });
-
-    var marker = new ol.Feature({
-      geometry: new ol.geom.Point(center)
-    });
-    marker.setStyle(markerStyle);
-
-    var markerSource = new ol.source.Vector();
-    markerSource.addFeature(marker);
-
-    var layers = [
-      new ol.layer.Tile({
-        source: new ol.source.Stamen({
-          layer: 'watercolor'
-        })
-      }),
-      new ol.layer.Tile({
-        source: new ol.source.Stamen({
-          layer: 'terrain-labels'
-        })
-      }),
-      new ol.layer.Vector({
-          source: markerSource
-        })
-    ];
-
-    var map = new ol.Map({
-      layers: layers,
-      target: 'map-canvas',
-      view: new ol.View({
-        center: center,
-        zoom: 11,
-        maxZoom: 12,
-        minZoom: 11
-      })
-    });
-  </script>
   </div>
 
   </body>
